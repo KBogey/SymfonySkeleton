@@ -1,0 +1,20 @@
+<div class="card mb-3" style="width: 18rem;">
+	<img style="width: 200px; height: auto;" src="{{listing.model.picturePath}}" class="card-img-top justify-content-center" alt="{{listing.model.name}}">
+	<div class="card-header d-flex justify-content-between">
+		<span class="fw-bold">{{listing.model.brand.name}}
+			{{listing.model.name}}</span>
+		<span class="fst-italic">{{listing.createdAt|date('d-m-y')}}</span>
+
+	</div>
+	<div class="card-body">
+		<h5 class="card-title">{{listing.title|capitalize}}</h5>
+		{% if listing.description is not null %}
+			<p class="card-text">{{listing.description|length > 150 ? listing.description|slice(0, 150) ~ '...' : listing.description|capitalize}}</p>
+		{% endif %}
+		<div class="d-flex justify-content-between">
+			<span class="fw-bold btn btn-outline-secondary disabled">{{listing.price|round(0, 'floor')}}
+				€</span>
+			<a href="{{path('app_listing_detail', {'listingId': listing.id})}}" class="btn btn-primary">Voir le détail</a>
+		</div>
+	</div>
+</div>

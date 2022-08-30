@@ -1,0 +1,15 @@
+{% extends 'front/base.html.twig' %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}VroumVroum ° Ajouter une annonce
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="col-6 mt-3 d-flex justify-content-between">
+			{{form_start(form)}}
+			{{form_end(form)}}
+		</div>
+	</div>
+{% endblock %}

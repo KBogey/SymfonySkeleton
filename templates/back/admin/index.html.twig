@@ -1,0 +1,18 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}VroumVroum ° Admin
+{% endblock %}
+
+{% block body %}
+	<div class="d-flex flex-column me-auto ms-auto">
+		<h1 class="px-3 ms-5 mt-3">Bienvenue Mr le directeur</h1>
+		<div class="d-flex me-auto ms-auto">
+			<a class="btn btn-primary h-50 my-auto me-4" href="{{ path('app_add_brand') }}">
+				Ajoutez une marque
+			</a>
+			<a class="btn btn-primary h-50 my-auto me-4" href="{{ path('app_add_model') }}">
+				Ajoutez un modèle
+			</a>
+		</div>
+	</div>
+{% endblock %}

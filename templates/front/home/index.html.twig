@@ -1,5 +1,25 @@
 {% extends 'front/base.html.twig' %}
 
+{% block title %}VroumVroum
+{% endblock %}
+
 {% block body %}
-<h1>Squelette d'un projet Symfony </h1>
+
+	<div class="container">
+		<div class="d-flex justify-content-between">
+			<h1 class="mt-3 mb-4">Annonces VroumVroum</h1>
+			<a class="btn btn-primary h-50 my-auto" href="{{ path('app_add_listing') }}">
+				Ajoutez une annonce
+			</a>
+		</div>
+		<div class="row">
+			{% for listing in listings %}
+				<div class="col-lg-4 col-md-6">
+					{% include 'front/partials/_listings.html.twig' %}
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+
 {% endblock %}

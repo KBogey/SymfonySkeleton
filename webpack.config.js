@@ -75,6 +75,11 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
+
+    //tranfert des fichiers images et des scripts JS dans le dossier public
+    .copyFiles([
+        {from: './assets/img', to: 'img/[path][name].[ext]'},
+    ])
 ;
 
 module.exports = Encore.getWebpackConfig();
